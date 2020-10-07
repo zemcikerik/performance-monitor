@@ -1,0 +1,23 @@
+<mat-card class="content-card">
+    <h2>{{ basicInfo.computerName }}</h2>
+    <mat-divider></mat-divider>
+    <div>
+        <h3>Operating System</h3>
+        <span>Name: </span> {{ basicInfo.osName }}<br>
+        <span>Version: </span> {{ basicInfo.osVersion.version }}<br>
+        <span>Code Name: </span> {{ basicInfo.osVersion.codeName }}<br>
+        <span>Build Number: </span> {{ basicInfo.osVersion.buildNumber }}<br>
+    </div>
+</mat-card>
+<mat-card class="content-card" style="height: 50%;">
+    <ngx-charts-area-chart
+        [scheme]="colorScheme"
+        legend="true"
+        showYAxisLabel="true"
+        yAxis="true"
+        yAxisLabel="Usage"
+        timeline="true"
+        yScaleMax="100"
+        [results]="chartData">
+    </ngx-charts-area-chart>
+</mat-card>
